@@ -143,7 +143,7 @@ $ npm run dev
 
 ## Demo02: Multiple entry files ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo02))
 
-Multiple entry files are allowed. It is useful for a multi-page app which has different entry file for each page.
+多个入口文件也是可以的。在多页面应用中，每个页面拥有不同的入口文件，用这个就非常管用了。
 
 ```javascript
 // main1.js
@@ -180,11 +180,11 @@ module.exports = {
 
 ## Demo03: Babel-loader ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo03))
 
-Loaders are preprocessors which transform a resource file of your app ([more info](http://webpack.github.io/docs/using-loaders.html)) before Webpack's building process.
+Loaders 是一种预处理器，它可以在 Webpack 编译之前把你应用中的静态资源进行转换 ([更多信息](https://webpack.docschina.org/loaders/))。
 
-For example, [Babel-loader](https://www.npmjs.com/package/babel-loader) can transform JSX/ES6 file into normal JS files，after which Webpack will begin to build these JS files. Webpack's official doc has a complete list of [loaders](http://webpack.github.io/docs/list-of-loaders.html).
+举个例子， [Babel-loader](https://www.webpackjs.com/loaders/babel-loader/) 可以在 Webpack 编译这些 JS 文件之前，先将 JSX/ES6 语法的文件转换成普通 ES5 语法的文件。Webpack 官网可以查看目前支持的 [loaders](https://www.webpackjs.com/loaders/)。
 
-`main.jsx` is a JSX file.
+`main.jsx` 是一个 JSX 文件.
 
 ```javascript
 // main.jsx
@@ -233,7 +233,7 @@ module.exports = {
 };
 ```
 
-The above snippet uses `babel-loader` which needs Babel's preset plugins [babel-preset-es2015](https://www.npmjs.com/package/babel-preset-es2015) and [babel-preset-react](https://www.npmjs.com/package/babel-preset-react) to transpile ES6 and React.
+上边的代码段用到了 `babel-loader`， 它需要 Babel 的预设插件 [babel-preset-es2015](https://www.npmjs.com/package/babel-preset-es2015) and [babel-preset-react](https://www.npmjs.com/package/babel-preset-react) 来转义 ES6 和 React。
 
 ## Demo04: CSS-loader ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo04))
 
