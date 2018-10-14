@@ -1,50 +1,51 @@
-This repo is a collection of simple demos of Webpack.
+这个项目是一些简单的 Webpack 示例集合
 
-These demos are purposely written in a simple and clear style. You will find no difficulty in following them to learn the powerful tool.
+这些示例特意用简单明了的方式编写，你将会发现跟着这些例子学习这个强大的工具并非难事。
 
-## How to use
+## 如何使用
 
-First, install [Webpack](https://www.npmjs.com/package/webpack) and [webpack-dev-server](https://www.npmjs.com/package/webpack-dev-server) globally.
+首先，全局安装 [Webpack](https://www.npmjs.com/package/webpack) 和 
+[webpack-dev-server](https://www.npmjs.com/package/webpack-dev-server) 
 
 ```bash
 $ npm i -g webpack webpack-dev-server
 ```
 
-Then, clone the repo.
+然后，克隆这个仓库
 
 ```bash
 $ git clone https://github.com/ruanyf/webpack-demos.git
 ```
 
-Install the dependencies.
+安装依赖
 
 ```bash
 $ cd webpack-demos
 $ npm install
 ```
 
-Now, play with the source files under the repo's demo* directories.
+现在，去项目 demo* 目录下开始源码体验之旅吧
 
 ```bash
 $ cd demo01
 $ npm run dev
 ```
 
-If the above command doesn't open your browser automaticly, you have to visit http://127.0.0.1:8080 by yourself.
+如果上面的命令没有自动打开浏览器，你可能需要自己在浏览器访问
+http://127.0.0.1:8080
 
-## Foreword: What is Webpack
+## 前言：什么是 Webpack
 
-Webpack is a front-end tool to build JavaScript module scripts for browsers.
+Webpack 是为浏览器构建 JavaScirpt 模块脚本的前端工具
 
-It can be used similar to Browserify, and do much more.
+它可以像 Browserify 一样使用，并且更加强大
 
 ```bash
 $ browserify main.js > bundle.js
-# be equivalent to
+# 相当于
 $ webpack main.js bundle.js
 ```
-
-Webpack needs a configuration file called `webpack.config.js` which is just a CommonJS module.
+Webpack 需要一个 `webpack.config.js` 的配置文件，它只是一个 CommonJs 模块
 
 ```javascript
 // webpack.config.js
@@ -55,22 +56,20 @@ module.exports = {
   }
 };
 ```
-
-After having `webpack.config.js`, you can invoke Webpack without any arguments.
+有了这个文件之后，你可以不带参数的调用 Webpack
 
 ```bash
 $ webpack
 ```
+你需要了解一些命令行选项
 
-Some command-line options you should know.
+- `webpack` – 开发环境构建
+- `webpack -p` – 生产环境构建(压缩混淆脚本)
+- `webpack --watch` – 监听变动并自动打包
+- `webpack -d` – 生成map映射文件
+- `webpack --colors` – 构建过程带颜色输出
 
-- `webpack` – building for development
-- `webpack -p` – building for production (minification)
-- `webpack --watch` – for continuous incremental building
-- `webpack -d` – including source maps
-- `webpack --colors` – making building output pretty
-
-You could customize `scripts` field in your package.json file as following.
+你可能需要像下面这样在 package.json 中自定义一些脚本 `scripts`
 
 ```javascript
 // package.json
@@ -84,7 +83,7 @@ You could customize `scripts` field in your package.json file as following.
 }
 ```
 
-## Index
+## 目录
 
 1. [Entry file](#demo01-entry-file-source)
 1. [Multiple entry files](#demo02-multiple-entry-files-source)
@@ -104,9 +103,9 @@ You could customize `scripts` field in your package.json file as following.
 
 ## Demo01: Entry file ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo01))
 
-Entry file is a file which Webpack reads to build `bundle.js`.
+入口文件是 Webpack 进行读取构建 `bundle.js` 文件的一个文件
 
-For example, `main.js` is an entry file.
+例如， `main.js` 就是一个入口文件.
 
 ```javascript
 // main.js
@@ -123,7 +122,7 @@ index.html
 </html>
 ```
 
-Webpack follows `webpack.config.js` to build `bundle.js`.
+Webpack 遵循 `webpack.config.js` 来构建 `bundle.js`.
 
 ```javascript
 // webpack.config.js
@@ -135,7 +134,7 @@ module.exports = {
 };
 ```
 
-Launch the server, visit http://127.0.0.1:8080 .
+启动服务，访问 http://127.0.0.1:8080 .
 
 ```bash
 $ cd demo01
