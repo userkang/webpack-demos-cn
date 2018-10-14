@@ -1,6 +1,6 @@
 这个项目是一些简单的 Webpack 示例集合
 
-这些示例特意用简单明了的方式编写，你将会发现跟着这些例子学习这个强大的工具并非难事。
+这些示例特意用简单明了的方式编写，你将会发现跟着这些例子学习这个强大的工具并非难事。
 
 ## 如何使用
 
@@ -11,7 +11,7 @@
 $ npm i -g webpack webpack-dev-server
 ```
 
-然后，克隆这个仓库
+然后，克隆这个仓库
 
 ```bash
 $ git clone https://github.com/ruanyf/webpack-demos.git
@@ -45,7 +45,7 @@ $ browserify main.js > bundle.js
 # 相当于
 $ webpack main.js bundle.js
 ```
-Webpack 需要一个 `webpack.config.js` 的配置文件，它只是一个 CommonJs 模块
+Webpack 需要一个 `webpack.config.js` 的配置文件，它只是一个 CommonJs 模块
 
 ```javascript
 // webpack.config.js
@@ -64,12 +64,12 @@ $ webpack
 你需要了解一些命令行选项
 
 - `webpack` – 开发环境构建
-- `webpack -p` – 生产环境构建(压缩混淆脚本)
+- `webpack -p` – 生产环境构建(压缩混淆脚本)
 - `webpack --watch` – 监听变动并自动打包
 - `webpack -d` – 生成map映射文件
 - `webpack --colors` – 构建过程带颜色输出
 
-你可能需要像下面这样在 package.json 中自定义一些脚本 `scripts`
+你可能需要像下面这样在 package.json 中自定义一些脚本 `scripts`
 
 ```javascript
 // package.json
@@ -122,7 +122,7 @@ index.html
 </html>
 ```
 
-Webpack 遵循 `webpack.config.js` 来构建 `bundle.js`.
+Webpack 遵循 `webpack.config.js` 来构建 `bundle.js`.
 
 ```javascript
 // webpack.config.js
