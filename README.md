@@ -237,7 +237,7 @@ module.exports = {
 
 ## Demo04: CSS-loader ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo04))
 
-Webpack allows you to include CSS in JS file, then preprocessed CSS file with [CSS-loader](https://github.com/webpack-contrib/css-loader).
+Webpack 允许在 JS 文件里包含 CSS，并通过 [CSS-loader](https://www.webpackjs.com/loaders/css-loader/)来预处理 CSS 文件。
 
 main.js
 
@@ -284,17 +284,15 @@ module.exports = {
   }
 };
 ```
+注意，你必须用到两个 loaders 去转换 CSS 文件。一个是  [CSS-loader](https://www.webpackjs.com/loaders/css-loader/) 来读取 CSS 文件，另一个是 [Style-loader](https://www.webpackjs.com/loaders/style-loader/) 用来把 `<style>` 标签插入 HTML 页面。
 
-Attention, you have to use two loaders to transform CSS file. First is [CSS-loader](https://www.npmjs.com/package/css-loader) to read CSS file, and another one is [Style-loader](https://www.npmjs.com/package/style-loader) to insert `<style>` tag into HTML page.
-
-Then, launch the server.
+接下来，让我们启动服务。
 
 ```bash
 $ cd demo04
 $ npm run dev
 ```
-
-Actually, Webpack inserts an internal style sheet into `index.html`.
+事实上，Webpack 会将一个内联样式表插入到 `index.html`。
 
 ```html
 <head>
@@ -309,7 +307,7 @@ Actually, Webpack inserts an internal style sheet into `index.html`.
 
 ## Demo05: Image loader ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo05))
 
-Webpack could also include images in JS files.
+Webpack 可以在 JS 文件中包含图片。
 
 main.js
 
