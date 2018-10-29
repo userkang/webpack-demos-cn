@@ -14,7 +14,7 @@ $ npm i -g webpack webpack-dev-server
 然后，克隆这个仓库
 
 ```bash
-$ git clone https://github.com/ruanyf/webpack-demos.git
+$ git clone https://github.com/userkang/webpack-demos.git
 ```
 
 安装依赖
@@ -104,7 +104,7 @@ $ webpack
 1. [Exposing Global Variables](#demo14-exposing-global-variables-source)
 1. [React router](#demo15-react-router-source)
 
-## Demo01: Entry file ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo01))
+## Demo01: Entry file ([source](https://github.com/userkang/webpack-demos/tree/master/demo01))
 
 入口文件是 Webpack 进行读取构建 `bundle.js` 文件的一个文件
 
@@ -144,7 +144,7 @@ $ cd demo01
 $ npm run dev
 ```
 
-## Demo02: Multiple entry files ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo02))
+## Demo02: Multiple entry files ([source](https://github.com/userkang/webpack-demos/tree/master/demo02))
 
 多个入口文件也是可以的。在多页面 应用中，每个页面拥有不同的入口文件，用这个就非常管用了。
 
@@ -181,7 +181,7 @@ module.exports = {
 }
 ```
 
-## Demo03: Babel-loader ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo03))
+## Demo03: Babel-loader ([source](https://github.com/userkang/webpack-demos/tree/master/demo03))
 
 Loaders 是一种预处理器，它可以在 Webpack 编译之前把你应用中的静态资源进行转换 ([更多信息](https://webpack.docschina.org/loaders/))。
 
@@ -235,7 +235,7 @@ module.exports = {
 
 上边的代码段用到了 `babel-loader`， 它需要 Babel 的预设插件 [babel-preset-es2015](https://www.npmjs.com/package/babel-preset-es2015) and [babel-preset-react](https://www.npmjs.com/package/babel-preset-react) 来转义 ES6 和 React。
 
-## Demo04: CSS-loader ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo04))
+## Demo04: CSS-loader ([source](https://github.com/userkang/webpack-demos/tree/master/demo04))
 
 Webpack 允许在 JS 文件里包含 CSS，并通过 [CSS-loader](https://www.webpackjs.com/loaders/css-loader/)来预处理 CSS 文件。
 
@@ -307,7 +307,7 @@ $ npm run dev
 </head>
 ```
 
-## Demo05: Image loader ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo05))
+## Demo05: Image loader ([source](https://github.com/userkang/webpack-demos/tree/master/demo05))
 
 Webpack 可以在 JS 文件中包含图片。
 
@@ -369,7 +369,7 @@ module.exports = {
 <img src="4853ca667a2b8b8844eb2693ac1b2578.png">
 ```
 
-## Demo06: CSS Module ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo06))
+## Demo06: CSS Module ([source](https://github.com/userkang/webpack-demos/tree/master/demo06))
 
 `css-loader?modules` 的 [CSS Module](https://github.com/css-modules/css-modules) 功能可以给 JS 模块的 CSS 设置一个局部作用域。你可以用 `:global(selector)` ([更多](https://css-modules.github.io/webpack-demo/)) 关掉它，使样式变成全局的。
 
@@ -465,7 +465,7 @@ $ npm run dev
 
 访问 http://127.0.0.1:8080, 你将看到 `h1` 是红色的，因为它的样式是局部作用域，`h2` 是蓝色的，因为它的作用域是全局的。
 
-## Demo07: UglifyJs Plugin ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo07))
+## Demo07: UglifyJs Plugin ([source](https://github.com/userkang/webpack-demos/tree/master/demo07))
 
 Webpack 用一套插件系统扩展了它的功能。比如，[UglifyJs Plugin](https://webpack.js.org/plugins/uglifyjs-webpack-plugin/) 就是其中的一个流行的插件，它可以压缩混淆输出的 js 代码。
 
@@ -510,7 +510,7 @@ var o = 'Hello'
 ;(o += ' World'), document.write('<h1>' + o + '</h1>')
 ```
 
-## Demo08: HTML Webpack Plugin and Open Browser Webpack Plugin ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo08))
+## Demo08: HTML Webpack Plugin and Open Browser Webpack Plugin ([source](https://github.com/userkang/webpack-demos/tree/master/demo08))
 
 This demo shows you how to load 3rd-party plugins.
 
@@ -557,7 +557,7 @@ $ npm run dev
 
 现在你不仅不需要手动的写 `index.html` 文件，而且也不用手动的打开浏览器了。Webpack 都帮你完成了。
 
-## Demo09: Environment flags ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo09))
+## Demo09: Environment flags ([source](https://github.com/userkang/webpack-demos/tree/master/demo09))
 
 你可以用环境变量来区分开发环境。
 
@@ -620,7 +620,7 @@ $ cd demo09
 $ npm run dev
 ```
 
-## Demo10: Code splitting ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo10))
+## Demo10: Code splitting ([source](https://github.com/userkang/webpack-demos/tree/master/demo10))
 
 对于一个大型 app，把所有代码塞到一个文件可能不是很好维护。Webpack 可以把一个庞大的 JS 文件拆分成几块。尤其，有些代码只有用的时候才引入可以按需加载。
 
@@ -673,7 +673,7 @@ $ npm run dev
 
 表面上，你不会感到什么变化。然而，Webpack 已经把 `main.js` 和 `a.js` 构建成两个不同的文件（`bundle.js` and `0.bundle.js`），并且按依赖关系依次引入。
 
-## Demo11: Code splitting with bundle-loader ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo11))
+## Demo11: Code splitting with bundle-loader ([source](https://github.com/userkang/webpack-demos/tree/master/demo11))
 
 另一种进行代码分离的方法是用 [bundle-loader](https://www.npmjs.com/package/bundle-loader)。
 
@@ -696,7 +696,7 @@ load(function(file) {
 
 现在 Webpack 将会构建 `main.js` 到 `bundle.js` 中, `a.js` 到 `0.bundle.js` 中。
 
-## Demo12: Common chunk ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo12))
+## Demo12: Common chunk ([source](https://github.com/userkang/webpack-demos/tree/master/demo12))
 
 当多个 Js 文件有共同的依赖，我们可以 [CommonsChunkPlugin](https://webpack.js.org/plugins/commons-chunk-plugin/) 把公共的部分提取出来生成一个文件。这对浏览器缓存和节省带宽是非常有用的。
 
@@ -769,7 +769,7 @@ module.exports = {
 }
 ```
 
-## Demo13: Vendor chunk ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo13))
+## Demo13: Vendor chunk ([source](https://github.com/userkang/webpack-demos/tree/master/demo13))
 
 你也可以用 CommonsChunkPlugin 提取第三方的 Js 生成一个单独的文件。
 
@@ -843,7 +843,7 @@ module.exports = {
 
 当然，这种情况，你还需要手动的全局的载入 `jquery.js`
 
-## Demo14: Exposing global variables ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo14))
+## Demo14: Exposing global variables ([source](https://github.com/userkang/webpack-demos/tree/master/demo14))
 
 如果你想要用到一些全局变量，但是又不想在打包的时候，把它打包到 bundle 文件中去。这个时候你可以在 `webpack.config.js` 中配置 `externals` 字段。
 
@@ -911,7 +911,7 @@ ReactDOM.render(<h1>{data}</h1>, document.body)
 
 你同样可以把 `react` 和 `react-dom` 添加到 `externals` 中，这样可以大大缩短编译时间和编译后 `bundle.js` 文件的大小。
 
-## Demo15: React router ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo15))
+## Demo15: React router ([source](https://github.com/userkang/webpack-demos/tree/master/demo15))
 
 这个演示用 webpack 来构建 [React-router](https://github.com/rackt/react-router/blob/0.13.x/docs/guides/overview.md) 的官方例子.
 
