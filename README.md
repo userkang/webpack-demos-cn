@@ -622,7 +622,7 @@ $ npm run dev
 
 ## Demo10: Code splitting ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo10))
 
-对于一个大型 app，把所有代码塞到一个文件可能不是很好维护。Webpack 可以把一个庞大的 JS 文件分成几块。尤其，有些代码只有用的时候才引入可以按需加载。
+对于一个大型 app，把所有代码塞到一个文件可能不是很好维护。Webpack 可以把一个庞大的 JS 文件拆分成几块。尤其，有些代码只有用的时候才引入可以按需加载。
 
 Webpack 用 `require.ensure` 来定义一个代码点。
 
@@ -636,7 +636,7 @@ require.ensure(['./a'], function(require) {
 })
 ```
 
-`require.ensure` 告诉 Webpack `./a.js` 应该从 `bundle.js` 中分离出来，单独生成一个文件。
+`require.ensure` 告诉 Webpack `./a.js` 应该从 `bundle.js` 中拆分出来，单独生成一个文件。
 
 ```javascript
 // a.js
@@ -728,7 +728,7 @@ index.html
 </html>
 ```
 
-The above `commons.js` is the common chunk of `main1.jsx` and `main2.jsx`. As you can imagine, `commons.js` includes `react` and `react-dom`.
+上面的 `commons.js` 就是 `main1.jsx` 和 `main2.jsx` 的公共部分。也就是包含了 `react` 和 `react-dom`。
 
 webpack.config.js
 
@@ -771,7 +771,7 @@ module.exports = {
 
 ## Demo13: Vendor chunk ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo13))
 
-You can also extract the vendor libraries from a script into a separate file with CommonsChunkPlugin.
+你也可以用 CommonsChunkPlugin 提取第三方的 Js 生成一个单独的文件。
 
 main.js
 
@@ -814,9 +814,9 @@ module.exports = {
 }
 ```
 
-In above codes, `entry.vendor: ['jquery']` tells Webpack that `jquery` should be included in the common chunk `vendor.js`.
+上面的代码，`entry.vendor: ['jquery']` 告诉 Webpack `jeuery` 应该被打包到一个公共 `vendor.js` 包中去。
 
-If you want a module available as a global variable in every module, such as making `$` and `jQuery` available in every module without writing `require("jquery")`. You should use `ProvidePlugin` ([Official doc](https://webpack.js.org/plugins/provide-plugin/)) which automatically loads modules instead of having to import or require them everywhere.
+如果你想让一个全局的变量在每一个模块可用，比如 `$` 和 `jQuery` 不用 `require("jquery")` 就可以直接用。那么你需要使用 `ProvidePlugin` ([Official doc](https://webpack.js.org/plugins/provide-plugin/)) 这个插件，它可以自动的载入模块，而不需要到处 import 或者 require。
 
 ```javascript
 // main.js
@@ -841,13 +841,13 @@ module.exports = {
 }
 ```
 
-Of course, in this case, you should load `jquery.js` globally by yourself.
+当然，这种情况，你还需要手动的全局的载入 `jquery.js`
 
 ## Demo14: Exposing global variables ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo14))
 
-If you want to use some global variables, and don't want to include them in the Webpack bundle, you can enable `externals` field in `webpack.config.js` ([official document](https://webpack.js.org/configuration/externals/)).
+如果你想要用到一些全局变量，但是又不想在打包的时候，把它打包到 bundle 文件中去。这个时候你可以在 `webpack.config.js` 中配置 `externals` 字段。
 
-For example, we have a `data.js`.
+比如，我们定义了一个 `data.js` 文件
 
 ```javascript
 // data.js
@@ -865,9 +865,9 @@ index.html
 </html>
 ```
 
-Attention, Webpack will only build `bundle.js`, but not `data.js`.
+注意，这里 Webpack 只会打包 `bundle.js`， 而不会打包 `data.js`。
 
-We can expose `data` as a global variable.
+我们可以 `data` 字段暴露盛一个全局变量
 
 ```javascript
 // webpack.config.js
@@ -898,7 +898,7 @@ module.exports = {
 }
 ```
 
-Now, you require `data` as a module variable in your script. but it actually is a global variable.
+现在，你可以在脚本中像引入其他模块一样引入 `data`。但它实际是一个全局变量。
 
 ```javascript
 // main.jsx
@@ -909,13 +909,13 @@ var ReactDOM = require('react-dom')
 ReactDOM.render(<h1>{data}</h1>, document.body)
 ```
 
-You could also put `react` and `react-dom` into `externals`, which will greatly decreace the building time and building size of `bundle.js`.
+你同样可以把 `react` 和 `react-dom` 添加到 `externals` 中，这样可以大大缩短编译时间和编译后 `bundle.js` 文件的大小。
 
 ## Demo15: React router ([source](https://github.com/ruanyf/webpack-demos/tree/master/demo15))
 
-This demo uses webpack to build [React-router](https://github.com/rackt/react-router/blob/0.13.x/docs/guides/overview.md)'s official example.
+这个演示用 webpack 来构建 [React-router](https://github.com/rackt/react-router/blob/0.13.x/docs/guides/overview.md) 的官方例子.
 
-Let's imagine a little app with a dashboard, inbox, and calendar.
+让我们想象一个带有仪表盘、收件箱和日历的小应用。
 
 ```
 +---------------------------------------------------------+
@@ -1058,14 +1058,14 @@ index.html
 </htmL>
 ```
 
-Launch the server.
+启动服务。
 
 ```bash
 $ cd demo15
 $ npm run dev
 ```
 
-## Useful links
+## 相关链接
 
 - [Webpack docs](https://webpack.js.org/concepts/)
 - [webpack-howto](https://github.com/petehunt/webpack-howto), by Pete Hunt
@@ -1074,6 +1074,6 @@ $ npm run dev
 - [Webpack and React is awesome](http://www.christianalfoni.com/articles/2014_12_13_Webpack-and-react-is-awesome), by Christian Alfoni
 - [Browserify vs Webpack](https://medium.com/@housecor/browserify-vs-webpack-b3d7ca08a0a9), by Cory House
 
-## License
+## 证书
 
 MIT
